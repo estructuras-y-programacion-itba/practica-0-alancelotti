@@ -1,3 +1,32 @@
+def creandorpartida():
+    archivo= open("probando1.txt","w")
+    archivo.write("J  J1  J2\n")
+    archivo.write("G        \n""E        \n""P        \n""F        \n""1        \n""2        \n""3        \n""4        \n""5        \n""6        \n")
+    archivo.close()
+
+def escribiendo(jugada,letra,puntos,J):
+    n=0
+    frase=""
+    archivo= open("probando1.txt","r")
+    lineas=archivo.readlines()
+    archivo.close()
+    for L in lineas[jugada]:
+        if n==J:
+            L=str(puntos)
+        frase+=L
+        print(L)
+        n+=1
+    lineas[jugada]=frase
+    archivo=open("probando1.txt","w")
+    for l in lineas:
+        archivo.write(str(l))     
+    archivo.close()
+
+creandorpartida()
+escribiendo(9,"G  ",60,7)  
+
+
+
 
 # Tu implementacion va aqui
 from random import randint
